@@ -3,22 +3,27 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ExemploHttp.Views.PostsView"
              Title="PostsView">
-    <VerticalStackLayout>
-        <Button Command="{Binding getPostsCommand}"
+    <ScrollView HorizontalOptions="Center" >
+        <VerticalStackLayout HorizontalOptions="Center" >
+        <Button Command="{Binding getPostsCommand}" HorizontalOptions="Center"
             Text="Caregar Postagens"/>
-        <ScrollView>
             <CollectionView ItemsSource="{Binding Posts}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <VerticalStackLayout>
-                            <Label 
-                              Text="{Binding Title}" />
+                        <VerticalStackLayout Spacing="15" Padding="30" HorizontalOptions="Center">
+                            <HorizontalStackLayout>
+                                <Label 
+                                    Text="Title:" FontSize="Title"/>
+                                <Label 
+                                    Text="{Binding Title}" FontSize="Title"/>
+                            </HorizontalStackLayout>
                             <Label 
                               Text="{Binding Body}"/>
+                            <Button Text="Curtir" HorizontalOptions="Start" Style="{StaticResource SmallButton}"/>
                         </VerticalStackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-        </ScrollView>
     </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
