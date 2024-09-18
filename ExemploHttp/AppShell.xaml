@@ -7,9 +7,15 @@
     Shell.FlyoutBehavior="Disabled"
     Title="ExemploHttp">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:PostsView}"
-        Route="MainPage" />
+    <TabBar>
+        <ShellContent
+            Title="Posts"
+            ContentTemplate="{DataTemplate local:PostsView}"
+            Route="PostsView" />
+        <ShellContent
+            Title="Photos"
+            ContentTemplate="{DataTemplate local:PhotosView}"
+            Route="PhotosView" />
+    </TabBar>
 
 </Shell>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExemploHttp.Views.PhotosView"
+             Title="PhotosView">
+    <VerticalStackLayout>
+        <Button Command="{Binding getPhotosCommand}"
+            Text="Caregar Fotos"/>
+        <ScrollView>
+            <CollectionView ItemsSource="{Binding Photos}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <VerticalStackLayout>
+                            <Image Source="{Binding ThumbnailUrl}" HeightRequest="100" />
+                            <Label Text="{Binding Title}" HorizontalOptions="Center"/>
+                        </VerticalStackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </ScrollView>
+    </VerticalStackLayout>
+</ContentPage>

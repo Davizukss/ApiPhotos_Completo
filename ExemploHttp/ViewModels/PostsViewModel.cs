@@ -17,7 +17,7 @@ namespace ExemploHttp.ViewModels
         [ObservableProperty]
         ObservableCollection<Post> posts;
 
-        public ICommand getPostsCommand;
+        public ICommand getPostsCommand { get; }
 
         public PostsViewModel()
         {
@@ -26,7 +26,7 @@ namespace ExemploHttp.ViewModels
 
         public async void getPosts()
         {
-           RestService restService = new RestService();
+           PostRestService restService = new PostRestService();
            Posts = await restService.getPostAsync();
         }
     }

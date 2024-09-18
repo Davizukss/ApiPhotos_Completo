@@ -11,13 +11,13 @@ using System.Collections.ObjectModel;
 
 namespace ExemploHttp.Services
 {
-	public class RestService
+	public class PostRestService
 	{
 		private HttpClient client;
         private Post post;
         private ObservableCollection<Post> posts;
 		private JsonSerializerOptions serializerOptions;
-        public RestService()
+        public PostRestService()
         {
             client = new HttpClient();
 			serializerOptions= new JsonSerializerOptions{
